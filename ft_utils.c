@@ -103,31 +103,28 @@ int		ft_argsnumber(char *str)
 	return (args);
 }
 
-char	**ft_argstype(char *str)
+void	ft_argstype(char *str)
 {
-	char **type;
 	int args;
 	int i;
+	t_pecado	types[ft_argsnumber(str)];
 
 	i = 0;
 	args = 0;
-	type = (char **)malloc(sizeof(char**) + ft_argsnumber(str));
 	while (str[i])
 	{
-		if (str[i - 1] == '%' && ft_isalpha(str[i]))
+		if (str[i++] == '%')
 		{
-			type[args] = (char *)malloc(sizeof(char *) + 1);
-			type[args][0] = str[i];
-			type[args][1] = '\0';
-			printf("[%d] -> %s\n", args, type[args]);
+			while(!ft_isalpha(str[i]))
+			{
+				
+			}
+		}
+		{
 			args++;
 		}
 		i++;
 	}
-	printf("out args = %d\n", args);
-	type[args] = NULL;
-	printf("zero: (%s)\n",type[0]);
-	return(type);
 }
 
 #define SPACE_REQ ft_strlen(base) - 2 + ft_strlen(sub)

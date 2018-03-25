@@ -18,6 +18,11 @@ char	**ft_argstype(char *str);
 int		ft_printf(const char *format, ...);
 int		ft_printf_ret(char *format);
 
+typedef struct	s_pecado
+{
+	char	*flag;
+	void	*data;
+}				t_pecado;
 
 /*	allowed functions	*/
 /*	write				*/

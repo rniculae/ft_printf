@@ -9,10 +9,7 @@ int		ft_printf(const char* format, ...)
 
 	i = 0;
 	args = ft_argsnumber((char *)format);
-	
-	args_type = (char **)malloc(sizeof(char **) + args + 1);
-	args_type = ft_argstype((char *)format); //seg fault
-	
+	args_type = ft_argstype((char *)format);
 	va_start(aptr, format);
 	while (i < args)
 	{
